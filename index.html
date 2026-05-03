@@ -83,7 +83,7 @@ async function generate() {
     output.innerHTML = "<span class='loading'>Generating brochure...</span>";
 
     try {
-        const res = await fetch(`http://127.0.0.1:8000/generate?url=${url}&tone=${tone}`);
+        const res = await fetch(`https://brochure-ai.onrender.com/generate?url=${url}&tone=${tone}`);
         const data = await res.json();
 
         output.innerHTML = marked.parse(data.brochure || data.error);
